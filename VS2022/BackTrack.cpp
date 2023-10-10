@@ -236,3 +236,91 @@ vector<string> letterCombinations(string digits) {
 	letterCombinationsF(combinations, phoneMap, digits, 0, combination);
 	return combinations;
 }
+
+
+//分割回文串
+vector<vector<string>> ans2;
+vector<string> track2;
+bool ishuiwen(string& s)
+{
+	int l = 0, r = s.size() - 1;
+	while (l < r)
+	{
+		if (s[l] != s[r]) return false;
+		l++;
+		r--;
+	}
+	return true;
+}
+
+void partitionF(int k, string& s)
+{
+	if (k == s.size())
+	{
+		ans2.push_back(track2);
+		return;
+	}
+	string x;
+	x += s[k];
+	track2.push_back(x);
+	partitionF(k + 1, s);
+	track2.pop_back();
+	for (int j = k + 1; j < s.size(); j++)
+	{
+		x += s[j];
+		if (ishuiwen(x))
+		{
+			track2.push_back(x);
+			partitionF(j + 1, s);
+			track2.pop_back();
+		}
+	}
+
+}
+
+vector<vector<string>> partition(string s)
+{
+	partitionF(0, s);
+	return ans2;
+}
+
+//N皇后问题
+int x[10]; //第i行的皇后放置在了 x[i]的位置上
+//将皇后放置在k行的x[k]上是否可行（是否不和前面的位置冲突）
+bool isok(int k)
+{
+	//判断同列和同斜线
+	for (int i = 0; i < k; i++)
+	{
+		if (x[i] == x[k] || (abs(k - i) == abs(x[k] - x[i]))) return false;
+	}
+	return true;
+}
+void solveNQueensF(int k,int n)
+{
+	if (k == n)
+	{
+		vector<string>t(n, string(n, '.'));
+		for (int i = 0; i < n; i++)
+		{
+			t[i][x[i]] = 'Q';
+		}
+		ans2.emplace_back(t);
+		return;
+	}
+	//选择皇后的位置
+	for (int i = 0; i < n; i++)
+	{
+		x[k] = i;
+		if (isok(k))
+		{
+			solveNQueensF(k + 1, n);
+		}
+	}
+}
+
+vector<vector<string>> solveNQueens(int n)
+{
+	solveNQueensF(0, n);
+	return ans2;
+}
