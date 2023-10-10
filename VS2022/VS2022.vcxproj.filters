@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="源文件\Container Simulation">
+      <UniqueIdentifier>{e7ad937b-f12c-4c38-ab30-6296217dfc17}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Basics Algorithm">
+      <UniqueIdentifier>{810c0116-bf07-4b78-8748-fa1974b76303}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\LeetCode And Other">
+      <UniqueIdentifier>{3b3fe6e8-eb99-465d-b300-3768a825a848}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="a1dbv.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CircleQueue.cpp">
+      <Filter>源文件\Container Simulation</Filter>
+    </ClCompile>
+    <ClCompile Include="HashTable.cpp">
+      <Filter>源文件\Container Simulation</Filter>
+    </ClCompile>
+    <ClCompile Include="MyPriorityQueue.cpp">
+      <Filter>源文件\Container Simulation</Filter>
+    </ClCompile>
+    <ClCompile Include="SharedPoint.cpp">
+      <Filter>源文件\Container Simulation</Filter>
+    </ClCompile>
+    <ClCompile Include="SimpleVector.cpp">
+      <Filter>源文件\Container Simulation</Filter>
+    </ClCompile>
+    <ClCompile Include="UnionFind.cpp">
+      <Filter>源文件\Container Simulation</Filter>
+    </ClCompile>
+    <ClCompile Include="LRU.cpp">
+      <Filter>源文件\Basics Algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="LFU.cpp">
+      <Filter>源文件\Basics Algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="QuickSort.cpp">
+      <Filter>源文件\Basics Algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectPrime.cpp">
+      <Filter>源文件\Basics Algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="Singleton.cpp">
+      <Filter>源文件\Basics Algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="AddWithoutAddSign.cpp">
+      <Filter>源文件\LeetCode And Other</Filter>
+    </ClCompile>
+    <ClCompile Include="ClassSchedule.cpp">
+      <Filter>源文件\LeetCode And Other</Filter>
+    </ClCompile>
+    <ClCompile Include="RobbingHouse.cpp">
+      <Filter>源文件\LeetCode And Other</Filter>
+    </ClCompile>
+    <ClCompile Include="SpecialNums.cpp">
+      <Filter>源文件\LeetCode And Other</Filter>
+    </ClCompile>
+    <ClCompile Include="MyMemory.cpp">
+      <Filter>源文件\Basics Algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="2dDp.cpp">
+      <Filter>源文件\LeetCode And Other</Filter>
+    </ClCompile>
+    <ClCompile Include="1dDp.cpp">
+      <Filter>源文件\LeetCode And Other</Filter>
+    </ClCompile>
+    <ClCompile Include="Bag.cpp">
+      <Filter>源文件\LeetCode And Other</Filter>
+    </ClCompile>
+    <ClCompile Include="KMP.cpp">
+      <Filter>源文件\Basics Algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="Manacher.cpp">
+      <Filter>源文件\Basics Algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="BinarySearchQuestion.cpp">
+      <Filter>源文件\Basics Algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="TrieTree.cpp">
+      <Filter>源文件\Container Simulation</Filter>
+    </ClCompile>
+    <ClCompile Include="BackTrack.cpp">
+      <Filter>源文件\LeetCode And Other</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MyHead.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="VS2022.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
