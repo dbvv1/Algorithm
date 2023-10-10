@@ -138,11 +138,13 @@
     <ClCompile Include="BackTrack.cpp" />
     <ClCompile Include="Bag.cpp" />
     <ClCompile Include="BinarySearchQuestion.cpp" />
+    <ClCompile Include="BinaryTree.cpp" />
     <ClCompile Include="CircleQueue.cpp" />
     <ClCompile Include="ClassSchedule.cpp" />
     <ClCompile Include="HashTable.cpp" />
     <ClCompile Include="KMP.cpp" />
     <ClCompile Include="LFU.cpp" />
+    <ClCompile Include="List.cpp" />
     <ClCompile Include="LRU.cpp" />
     <ClCompile Include="Manacher.cpp" />
     <ClCompile Include="MyMemory.cpp" />

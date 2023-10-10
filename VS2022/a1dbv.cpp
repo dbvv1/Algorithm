@@ -1,27 +1,11 @@
 ﻿#include <bits/stdc++.h>
 using namespace std;
 
-struct ListNode {
-    int val;
-    ListNode* next;
-    ListNode()
-        : val(0)
-        , next(nullptr)
-    {
-    }
-    ListNode(int x)
-        : val(x)
-        , next(nullptr)
-    {
-    }
-    ListNode(int x, ListNode* next)
-        : val(x)
-        , next(next)
-    {
-    }
-};
 
 
+
+//一副牌 能否全部由顺子打完
+//方法一：暴力递归
 int main()
 {
 
