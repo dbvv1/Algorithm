@@ -105,6 +105,9 @@
     <ClCompile Include="List.cpp">
       <Filter>源文件\LeetCode And Other</Filter>
     </ClCompile>
+    <ClCompile Include="Pattern.cpp">
+      <Filter>源文件\LeetCode And Other</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyHead.h">

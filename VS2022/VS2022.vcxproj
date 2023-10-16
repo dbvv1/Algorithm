@@ -149,6 +149,7 @@
     <ClCompile Include="Manacher.cpp" />
     <ClCompile Include="MyMemory.cpp" />
     <ClCompile Include="MyPriorityQueue.cpp" />
+    <ClCompile Include="Pattern.cpp" />
     <ClCompile Include="QuickSort.cpp" />
     <ClCompile Include="RobbingHouse.cpp" />
     <ClCompile Include="SelectPrime.cpp" />
