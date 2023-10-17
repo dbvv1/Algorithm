@@ -147,9 +147,10 @@
     <ClCompile Include="List.cpp" />
     <ClCompile Include="LRU.cpp" />
     <ClCompile Include="Manacher.cpp" />
+    <ClCompile Include="MeetingRooms.cpp" />
     <ClCompile Include="MyMemory.cpp" />
     <ClCompile Include="MyPriorityQueue.cpp" />
-    <ClCompile Include="Pattern.cpp" />
+    <ClCompile Include="PatternMatch.cpp" />
     <ClCompile Include="QuickSort.cpp" />
     <ClCompile Include="RobbingHouse.cpp" />
     <ClCompile Include="SelectPrime.cpp" />

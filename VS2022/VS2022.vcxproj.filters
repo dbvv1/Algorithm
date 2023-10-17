@@ -105,7 +105,10 @@
     <ClCompile Include="List.cpp">
       <Filter>源文件\LeetCode And Other</Filter>
     </ClCompile>
-    <ClCompile Include="Pattern.cpp">
+    <ClCompile Include="PatternMatch.cpp">
+      <Filter>源文件\LeetCode And Other</Filter>
+    </ClCompile>
+    <ClCompile Include="MeetingRooms.cpp">
       <Filter>源文件\LeetCode And Other</Filter>
     </ClCompile>
   </ItemGroup>

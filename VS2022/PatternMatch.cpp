@@ -98,7 +98,7 @@ bool patternMatching(string pattern, string value)
 		//a的长度为i 可以推出b的长度
 		int lena = i;
 		int lenb;
-		if (countb != 0 && lena * counta > value.size()) continue; //放置莫名其妙的溢出，提前判断是否还容得下b
+		if (countb != 0 && lena * counta > value.size()) break; //放置莫名其妙的溢出，提前判断是否还容得下b
 		if (countb == 0) lenb = 0;
 		else lenb = (value.size() - lena * counta) / countb;
 		//进行实际的匹配过程
@@ -107,16 +107,16 @@ bool patternMatching(string pattern, string value)
 		{
 			//推算出a
 			int start = lena * prea1 + lenb * preb1;
-			for (int k = 0; k < lena; k++) a += value[start + k];
+			a = value.substr(start, lena);
 		}
 		if (bk != -1)
 		{
 			//推算出b
 			int start = lena * prea2 + lenb * preb2;
-			for (int k = 0; k < lenb; k++) b += value[start + k];
+			b = value.substr(start, lenb);
 		}
 		if (a == b) continue;
-		string ans; ans.reserve(value.size());
+				string ans; ans.reserve(value.size());
 		for (int j = 0; j < pattern.size(); j++)
 		{
 			//模拟生成的结果

@@ -32,7 +32,7 @@ pair<int, int> Partition2(vector<int>& arr, int l, int r)
 		else if (arr[i] > pivot) swap(arr[--more], arr[i]);
 		else  i++;
 	}
-	return { less,more };
+	return { less + 1,more - 1 };
 }
 
 int partition3(int arr[], int l, int r)
@@ -57,8 +57,8 @@ void QuickSort(vector<int>& arr, int l, int r)
 {
 	if (l >= r) return;
 	pair<int, int> p = Partition2(arr, l, r);
-	QuickSort(arr, l, p.first);
-	QuickSort(arr, p.second, r);
+	QuickSort(arr, l, p.first - 1);
+	QuickSort(arr, p.second + 1, r);
 }
 
 void RandomQuickSort(vector<int>& arr, int l, int r)
@@ -73,8 +73,8 @@ void RandomQuickSort(vector<int>& arr, int l, int r)
 
 //求最小的k个数
 //方法一：基于堆
-//方法二：基于快速排序
-class Solution {
+//方法二：基于快速排序：求最小的第k个数即可
+class GetLeastNumbers {
 public:
 
 	vector<int> ans;
@@ -94,18 +94,64 @@ public:
 	}
 
 
-	void QuickSort(vector<int>& arr, int l, int r, int k)
+	int QuickSort(vector<int>& arr, int l, int r, int k)
 	{
-		if (l >= r) return;
+		if (l >= r) return -1;
 		srand(time(0));
 		swap(arr[l], arr[rand() % (r - l + 1) + l]);
 		int p = Partition1(arr, l, r);
+		if (p - l + 1 == k) return p;
+		else if (p - l + 1 > k) return QuickSort(arr, l, p - 1, k);
+		else return QuickSort(arr, p + 1, r, k - (p - l + 1));
 	}
 
 	//基于快速排序来实现
 	vector<int> getLeastNumbers(vector<int>& arr, int k)
 	{
+		int p = QuickSort(arr, 0, arr.size() - 1, k);
+		arr.resize(k);
+		return arr;
 
+	}
+};
+
+//求最大的第k个数--求最小的第n-k+1个数
+class FindKthLargest {
+public:
+
+	pair<int,int> Partition1(vector<int>& arr, int l, int r)
+	{
+		int less = l - 1; //小于区域
+		int more = r + 1; //大于区域
+		int pivot = arr[l]; //定义基准值
+		int i = l + 1;
+		while (i < more)
+		{
+			if (arr[i] < pivot)  swap(arr[++less], arr[i++]);
+			else if (arr[i] > pivot) swap(arr[--more], arr[i]);
+			else  i++;
+		}
+		return { less + 1,more - 1 };
+	}
+
+	//求最小的第k个数
+	int QuickSort(vector<int>& arr, int l, int r, int k)
+	{
+		if (l >= r) return l;
+		srand(time(0));
+		swap(arr[l], arr[rand() % (r - l + 1) + l]);
+		pair<int, int> p = Partition1(arr, l, r);
+		if (p.first - l + 1 <= k && p.second - l + 1 >= k) return p.first;
+		else if (p.first - l + 1 > k) return QuickSort(arr, l, p.first - 1, k);
+		else return QuickSort(arr, p.second + 1, r, k - (p.second - l + 1));
+	}
+
+	//基于快速排序来实现
+	int findKthLargest(vector<int>& nums, int k)
+	{
+		//1 2 3 4 5 后面全1
+		int p = QuickSort(nums, 0, nums.size() - 1, nums.size() - k + 1);
+		return nums[p];
 
 	}
 };
