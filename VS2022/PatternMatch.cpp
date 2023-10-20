@@ -8,7 +8,7 @@ using namespace std;
 //方法一：枚举中间那个最大的值 使用有序集合 multiset
 bool find132patternF1(vector<int>& nums) {
 	int n = nums.size();
-	if (n < 3) return;
+	if (n < 3) return false;
 	// 左侧最小值
 	int left_min = nums[0];
 	// 右侧所有元素

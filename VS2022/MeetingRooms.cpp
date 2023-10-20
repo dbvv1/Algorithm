@@ -33,7 +33,7 @@ bool canAttendMeetings(vector<Interval>& intervals)
 //方法一：排序 + 优先队列模拟
 
 //方法二：分离开始时间和结束时间
-int minMeetingRooms(vector<Interval>& intervals) {
+int minMeetingRooms2(vector<Interval>& intervals) {
     // Check for the base case. If there are no intervals, return 0
     if (intervals.size() == 0) {
         return 0;
@@ -70,7 +70,7 @@ int minMeetingRooms(vector<Interval>& intervals) {
 
 
 //方法三：前缀和 进入是1，结束是-1 本质：求最大子数组和
-int minMeetingRooms(vector<Interval>& intervals) {
+int minMeetingRooms3(vector<Interval>& intervals) {
     // Write your code here
     map<int, int> m;
     for (auto a : intervals) {

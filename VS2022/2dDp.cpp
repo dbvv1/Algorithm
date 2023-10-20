@@ -1,5 +1,6 @@
 #include <string>
 #include <vector>
+#include<initializer_list>
 using namespace std;
 
 // 最长公共子序列 TODO:加上回溯 构造这个子序列
@@ -66,7 +67,8 @@ int minDistance1(string s1, string s2)
 			else
 			{
 				//三种选择，添加，删除，替换 依次尝试即可
-				dp[i][j] = min({ dp[i][j - 1],dp[i - 1][j],dp[i - 1][j - 1] }) + 1;
+				int p = min(dp[i][j - 1], min(dp[i - 1][j], dp[i - 1][j - 1]));
+				dp[i][j] = p + 1;
 			}
 		}
 	}

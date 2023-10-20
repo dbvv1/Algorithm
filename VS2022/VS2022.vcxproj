@@ -148,6 +148,7 @@
     <ClCompile Include="LRU.cpp" />
     <ClCompile Include="Manacher.cpp" />
     <ClCompile Include="MeetingRooms.cpp" />
+    <ClCompile Include="MoveWindow.cpp" />
     <ClCompile Include="MyMemory.cpp" />
     <ClCompile Include="MyPriorityQueue.cpp" />
     <ClCompile Include="PatternMatch.cpp" />

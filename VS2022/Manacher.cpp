@@ -6,7 +6,7 @@ using namespace std;
 
 //方法一:动态规划      求子串可以用SubStr
 bool dp[1001][1001];
-string longestPalindrome(string s)
+string longestPalindrome1(string s)
 {
     //dp[i][j]代表 i-j范围内是否是回文
     //dp[i][j] = s[i]==s[j]&&dp[i-1][j-1] 每个位置值依赖左下方
@@ -40,7 +40,7 @@ string longestPalindrome(string s)
 
 }
 //方法二：中心扩展算法
-string longestPalindrome(string s)
+string longestPalindrome2(string s)
 {
     //假定以每个点作为中心点的情况
     int len = s.size();
@@ -82,5 +82,5 @@ string longestPalindrome(string s)
 string longestPalindrome3(string s)
 {
     
-
+    return "";
 }

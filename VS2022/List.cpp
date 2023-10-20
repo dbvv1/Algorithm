@@ -38,11 +38,11 @@ int getListLength(ListNode* p)
 
 //相交链表：返回两个链表的相交结点
 //方法一：哈希表  方法二：求长度的差值  方法三：双指针
-ListNode* getIntersectionNode(ListNode* headA, ListNode* headB)
+ListNode* getIntersectionNode(ListNode* headA, ListNode* headB) 
 {
 	if (headA == nullptr || headB == nullptr)  return nullptr;
 	ListNode* pA = headA, * pB = headB;
-	while (pA != pB)
+	while (pA != pB) 
 	{
 		pA = pA == nullptr ? headB : pA->next;
 		pB = pB == nullptr ? headA : pB->next;
@@ -52,7 +52,7 @@ ListNode* getIntersectionNode(ListNode* headA, ListNode* headB)
 
 
 //翻转链表  三个指针 pre p post
-ListNode* reverseList(ListNode* head)
+ListNode* reverseList(ListNode* head) 
 {
 	ListNode* pre = nullptr;
 	ListNode* p = head;
@@ -68,7 +68,7 @@ ListNode* reverseList(ListNode* head)
 }
 
 //回文链表  快慢指针找中点 + 翻转后半部分 + 一一比较 + 翻转回去
-bool isPalindrome(ListNode* head)
+bool isPalindrome(ListNode* head) 
 {
 	ListNode* f = head;
 	ListNode* s = head;
@@ -95,7 +95,7 @@ bool isPalindrome(ListNode* head)
 
 
 //判断链表中是否存在环 利用快慢指针
-bool hasCycle(ListNode* head)
+bool hasCycle(ListNode* head) 
 {
 	if (head == nullptr || head->next == nullptr) return false;
 	ListNode* f = head->next->next;
@@ -111,7 +111,7 @@ bool hasCycle(ListNode* head)
 }
 
 //环形链表求入口结点 利用快慢指针第一次相遇 + 回溯快指针 + 第二次相遇
-ListNode* detectCycle(ListNode* head)
+ListNode* detectCycle(ListNode* head) 
 {
 	if (head == nullptr || head->next == nullptr) return nullptr;
 	ListNode* f = head->next->next;
@@ -132,7 +132,7 @@ ListNode* detectCycle(ListNode* head)
 }
 
 //合并两个有序链表  双指针法 + 最后的合并
-ListNode* mergeTwoLists(ListNode* list1, ListNode* list2)
+ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) 
 {
 	ListNode* newHead = new ListNode(0);
 	ListNode* p = newHead;
@@ -183,7 +183,7 @@ ListNode* sortList(ListNode* head)
 }
 
 //两个链表 按照顺序相加模拟进位即可
-ListNode* addTwoNumbers(ListNode* l1, ListNode* l2)
+ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) 
 {
 	ListNode* newHead = new ListNode();
 	ListNode* p = newHead;
@@ -225,7 +225,7 @@ ListNode* addTwoNumbers(ListNode* l1, ListNode* l2)
 
 //删除链表倒数第k个结点
 //方法一：求链表的长度 + 确定删除的前一个位置
-ListNode* removeNthFromEndF1(ListNode* head, int k)
+ListNode* removeNthFromEndF1(ListNode* head, int k) 
 {
 	ListNode* newHead = new ListNode(0);
 	newHead->next = head;
@@ -291,7 +291,7 @@ pair<ListNode*, ListNode* > reverseKGroupF(ListNode* head, int k)
 	//先递归 再处理本层结点
 	for (int i = 0; i < k - 1 && tail != nullptr; i++) tail = tail->next;
 	if (tail == nullptr) return{ newHead,tail };
-
+	
 
 
 	return { newHead,tail };
@@ -299,13 +299,33 @@ pair<ListNode*, ListNode* > reverseKGroupF(ListNode* head, int k)
 
 ListNode* reverseKGroup(ListNode* head, int k)
 {
-
+	if (head == nullptr || head->next == nullptr) return head;
+	ListNode* newHead = head;
+	ListNode* tail = head;
+	//先递归
+	for (int i = 0; i < k - 1 && tail != nullptr; i++) tail = tail->next;
+	if (tail == nullptr) return newHead;
+	auto t = reverseKGroup(tail->next, k);
+	tail->next = t; //重点 先连接起来后面的内容
+	//再处理本层结点 即翻转从newHead 到 tail 结点
+	ListNode* p = newHead;
+	ListNode* pre = nullptr;
+	while (p != t)
+	{
+		ListNode* pos = p->next;
+		p->next = pre;
+		pre = p;
+		p = pos;
+	}
+	newHead->next = t;
+	newHead = tail;
+	return newHead;
 }
 
 
 
 //合并k个升序链表 多路归并
-ListNode* mergeKLists(vector<ListNode*>& lists)
+ListNode* mergeKLists(vector<ListNode*>& lists) 
 {
 	ListNode* newHead = new ListNode(0);
 	ListNode* p = newHead;
@@ -345,7 +365,7 @@ public:
 		return l.back().second;
 	}
 
-	void put(int key, int value)
+	void put(int key, int value) 
 	{
 		if (hash.count(key))
 		{
@@ -357,7 +377,7 @@ public:
 			//淘汰掉l的头部
 			hash.erase(l.front().first);
 			l.erase(l.begin());
-
+			
 		}
 		l.push_back({ key, value });
 		hash[key] = --l.end();
@@ -380,34 +400,63 @@ public:
 };
 
 
-class Solution {
-private:
-	unordered_map<Node*, Node*> hash;
-public:
-	//使用哈希表
-	Node* copyRandomList(Node* head)
-	{
-		if (head == nullptr) return nullptr;
-		Node* newHead = new Node(head->val);
-		Node* p1 = newHead;
-		hash[head] = p1;
-		Node* p2 = head->next;
-		while (p2)
-		{
-			p1->next = new Node(p2->val);
-			p1 = p1->next;
-			hash[p2] = p1;
-			p2 = p2->next;
-		}
-		p1 = newHead;
-		p2 = head;
-		while (p1)
-		{
-			p1->random = hash[p2->random];
-			p1 = p1->next;
-			p2 = p2->next;
-		}
-		return newHead;
 
+Node* copyRandomList(Node* head)
+{
+
+	if (head == nullptr) return nullptr;
+	unordered_map<Node*, Node*> hash;
+	Node* newHead = new Node(head->val);
+	Node* p1 = newHead;
+	hash[head] = p1;
+	Node* p2 = head->next;
+	while (p2)
+	{
+		p1->next = new Node(p2->val);
+		p1 = p1->next;
+		hash[p2] = p1;
+		p2 = p2->next;
 	}
-};
+	p1 = newHead;
+	p2 = head;
+	while (p1)
+	{
+		p1->random = hash[p2->random];
+		p1 = p1->next;
+		p2 = p2->next;
+	}
+	return newHead;
+
+}
+
+//翻转指定位置的链表
+void reverseBetween(ListNode* head, ListNode* tail)
+{
+	
+}
+
+ListNode* reverseBetween(ListNode* head, int left, int right) 
+{
+	ListNode* newHead = new ListNode(0);
+	newHead->next = head;
+	//找到第left个前一个元素  以及第right的后一个元素
+	ListNode* leftPre = newHead;
+	ListNode* pre = newHead;
+	for (int i = 1; i < left; i++) pre = pre->next;
+	leftPre = pre;
+	pre = pre->next;
+	ListNode*p = pre->next;
+	int t = right - left;
+	while (t--)
+	{
+		ListNode* pos = p->next;
+		p->next = pre;
+		pre = p;
+		p = pos;
+	}
+	ListNode* rightPos = p;
+	leftPre->next->next = rightPos;
+	leftPre->next = pre;
+	return newHead->next;
+
+}
