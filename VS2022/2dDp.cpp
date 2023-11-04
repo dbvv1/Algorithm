@@ -3,6 +3,11 @@
 #include<initializer_list>
 using namespace std;
 
+const int mod = 1e9 + 7;
+int n;
+int m;
+
+
 // 最长公共子序列 TODO:加上回溯 构造这个子序列
 int longestCommonSubsequence1(string s1, string s2)
 {
@@ -73,4 +78,68 @@ int minDistance1(string s1, string s2)
 		}
 	}
 	return dp[len1][len2];
+}
+
+
+
+//切披萨的方案数
+//方法一： 递归 + 记忆化搜索 + 后缀和优化
+int dp3[11][51][51];
+int apples[51][51];    //post[i][j]表示以i j为初始起点的矩形中有多少个苹果
+
+//当前是第i次切割，已经切割到了第x行 第y列   返回此时的情况
+int f(int i, int x, int y, vector<string>& pizze, int k)
+{
+	//终止条件 不需要切割了
+	if (i == k - 1)
+	{
+		//最后还要进行一次判断 判断剩下有无苹果
+		if (apples[x][y] != 0) dp3[i][x][y] = 1;
+		return 	dp3[i][x][y];
+	}
+	if (dp3[i][x][y] != 0) return dp3[i][x][y];
+	//枚举要进行切割的行和列   要判断切割的地方是否至少有一个苹果（后缀和优化）
+	int sum = 0;
+	bool have = false;
+	for (int row = x; row < n; row++)
+	{
+		if (apples[row][y] - apples[row + 1][y] > 0) have = true;
+		if (have)
+		{
+			sum += f(i + 1, row + 1, y, pizze, k);
+			sum %= mod;
+		}
+
+	}
+	have = false;
+	for (int col = y; col < m; col++)
+	{
+		if (apples[x][col] - apples[x][col + 1] > 0) have = true;
+		if (have)
+		{
+			sum += f(i + 1, x, col + 1, pizze, k);
+			sum %= mod;
+		}
+	}
+	dp3[i][x][y] = sum;
+	return sum;
+}
+
+
+int ways(vector<string>& pizza, int k)
+{	
+	//需要切披萨k-1次
+	//dp[i][j][w]表示
+	n = pizza.size();
+	m = pizza[0].size();
+	apples[n - 1][m - 1] = pizza[n - 1][m - 1] == 'A';
+	for (int i = n - 1; i >= 0; i--)
+	{
+		for (int j = m - 1; j >= 0; j--)
+		{
+			apples[i][j] = apples[i + 1][j] + apples[i][j + 1] - apples[i + 1][j + 1];
+			if (pizza[i][j] == 'A') apples[i][j]++;
+		}
+	}
+	return f(0, 0, 0, pizza, k);
 }

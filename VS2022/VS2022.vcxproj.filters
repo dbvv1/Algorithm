@@ -114,6 +114,18 @@
     <ClCompile Include="MoveWindow.cpp">
       <Filter>源文件\LeetCode And Other</Filter>
     </ClCompile>
+    <ClCompile Include="MaxPoints.cpp">
+      <Filter>源文件\LeetCode And Other</Filter>
+    </ClCompile>
+    <ClCompile Include="JudgePoint24.cpp">
+      <Filter>源文件\LeetCode And Other</Filter>
+    </ClCompile>
+    <ClCompile Include="Calculator.cpp">
+      <Filter>源文件\LeetCode And Other</Filter>
+    </ClCompile>
+    <ClCompile Include="MaximumRectangle.cpp">
+      <Filter>源文件\LeetCode And Other</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyHead.h">

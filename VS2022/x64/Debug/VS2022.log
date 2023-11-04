@@ -1,3 +1,6 @@
-﻿  a1dbv.cpp
+﻿  MaxPoints.cpp
+C:\Users\dbv\Desktop\VS2022\VS2022\MaxPoints.cpp(12,1): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+  a1dbv.cpp
 D:\VS2022\VC\Tools\MSVC\14.34.31933\include\ciso646(15,47): warning C4996: '_Header_ciso646': warning STL4036: <ciso646> is removed in C++20. You can define _SILENCE_CXX20_CISO646_REMOVED_WARNING or _SILENCE_ALL_CXX20_DEPRECATION_WARNINGS to suppress this warning.
+  正在生成代码...
   VS2022.vcxproj -> C:\Users\dbv\Desktop\VS2022\x64\Debug\VS2022.exe
