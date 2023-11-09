@@ -133,7 +133,7 @@
   <ItemGroup>
     <ClCompile Include="1dDp.cpp" />
     <ClCompile Include="2dDp.cpp" />
-    <ClCompile Include="AddWithoutAddSign.cpp" />
+    <ClCompile Include="CaluateWithBitOperation.cpp" />
     <ClCompile Include="a1dbv.cpp" />
     <ClCompile Include="BackTrack.cpp" />
     <ClCompile Include="Bag.cpp" />
@@ -149,6 +149,7 @@
     <ClCompile Include="List.cpp" />
     <ClCompile Include="LRU.cpp" />
     <ClCompile Include="Manacher.cpp" />
+    <ClCompile Include="MapAlgorithm.cpp" />
     <ClCompile Include="MaximumRectangle.cpp" />
     <ClCompile Include="MaxPoints.cpp" />
     <ClCompile Include="MeetingRooms.cpp" />
@@ -157,14 +158,18 @@
     <ClCompile Include="MyPriorityQueue.cpp" />
     <ClCompile Include="PatternMatch.cpp" />
     <ClCompile Include="QuickSort.cpp" />
+    <ClCompile Include="Recursion.cpp" />
     <ClCompile Include="RobbingHouse.cpp" />
     <ClCompile Include="SelectPrime.cpp" />
     <ClCompile Include="SharedPoint.cpp" />
     <ClCompile Include="SimpleVector.cpp" />
     <ClCompile Include="Singleton.cpp" />
     <ClCompile Include="SpecialNums.cpp" />
+    <ClCompile Include="StringHash.cpp" />
+    <ClCompile Include="TreeArray.cpp" />
     <ClCompile Include="TrieTree.cpp" />
     <ClCompile Include="UnionFind.cpp" />
+    <ClCompile Include="UsePriorityQueue.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyHead.h" />

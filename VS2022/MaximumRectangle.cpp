@@ -1,5 +1,5 @@
 #include<vector>
-#include <stack>
+#include<stack>
 using namespace std;
 
 
@@ -24,7 +24,7 @@ int maximalSquare(vector<vector<char>>& matrix)
 		{
 			if (matrix[i][j] == '0') dp[i][j] = 0;
 			else
-				dp[i][j] = min({ dp[i - 1][j - 1],dp[i - 1][j],dp[i][j - 1] }) + 1;
+				//dp[i][j] = min({ dp[i - 1][j - 1],dp[i - 1][j],dp[i][j - 1] }) + 1;
 
 			ans = max(ans, dp[i][j]);
 		}
@@ -67,6 +67,8 @@ int maximalRectangle1(vector<vector<char>>& matrix)
 	return ans;
 
 }
+
+int largestRectangleArea3(vector<int>& heights);
 
 //方法二：使用单调栈（实际上就是柱状图中最大矩形算法）
 int maximalRectangle2(vector<vector<char>>& matrix)

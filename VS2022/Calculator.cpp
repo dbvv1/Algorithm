@@ -78,15 +78,31 @@ int calculate1(string s)
             //如果是右括号
             else if (s[i] == ')')
             {
-
+                //弹出所有的符号直到遇到一个左括号
             }
             else if (s[i] == '+')
             {
-
+                if (oper.empty() || oper.top() != '(')
+                {
+                    //可以进行运算
+                }
+                else oper.push('+');
             }
             else if (s[i] == '-')
             {
+                if (nums.empty())
+                {
+                    //该符号被用作一元运算符
+                }
+                else
+                {
+                    if (oper.empty() || oper.top() != '(')
+                    {
+                        //可以进行运算
 
+                    }
+                    else oper.push('-');
+                }
             }
         }
     }
@@ -98,11 +114,11 @@ int calculate1(string s)
 int calculate2(string s)
 {
 
-
+    return 0;
 }
 
 //题目四：综合计算器实现   + - * / 和括号
 int calculate3(string s)
 {
-
+    return 0;
 }

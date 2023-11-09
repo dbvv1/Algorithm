@@ -6,3 +6,8 @@ public:
 };
 
 const int Text::a;
+
+int zxc()
+{
+	return 0;
+}

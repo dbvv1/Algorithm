@@ -143,3 +143,38 @@ int ways(vector<string>& pizza, int k)
 	}
 	return f(0, 0, 0, pizza, k);
 }
+
+//交错字符串
+bool isInterleave(string s1, string s2, string s3)
+{
+	//dp[i][j]表示s1前i个字符和s2前j个字符 能否组合成s3前i+j个字符
+	int len1 = s1.size();
+	int len2 = s2.size();
+	if (len1 + len2 != s3.size()) return false;
+	bool dp[len1 + 1][len2 + 1]; dp[len1][len2] = false;
+	dp[0][0] = true;
+	for (int j = 1; j <= len2; j++)
+	{
+		if (s2[j - 1] != s3[j - 1]) break;
+		dp[0][j] = true;
+	}
+	for (int i = 1; i < len1; i++)
+	{
+		if (s1[i - 1] != s3[i - 1]) break;
+		dp[i][0] = true;
+	}
+
+	for (int i = 1; i <= len1; i++)
+	{
+		for (int j = 1; j <= len2; j++)
+		{
+			//根据最后一个字符由谁搞定
+			bool p1 = (dp[i - 1][j]) && (s1[i - 1] == s3[i + j - 1]);
+			bool p2 = (dp[i][j - 1]) && (s2[j - 1] == s3[i + j - 1]);
+			dp[i][j] = p1 | p2;
+		}
+	}
+
+	return dp[len1][len2];
+
+}

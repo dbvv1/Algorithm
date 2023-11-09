@@ -1,4 +1,5 @@
 #include<vector>
+#include <functional>
 using namespace std;
 
 //你是一个专业的小偷，计划偷窃沿街的房屋。
@@ -131,4 +132,36 @@ int minCapability(vector<int>& nums, int k)
 		else l = mid + 1;
 	}
 	return ans;
+}
+
+//恢复二叉搜索树：恰好由两个结点的值被交换了
+void recoverTree(TreeNode* root)
+{
+	//方法一：中序遍历得到序列
+	vector<TreeNode*> nodes;
+
+	function<void(TreeNode*)> f = [&](TreeNode* root)
+	{
+		if (root == nullptr) return;
+		f(root->left);
+		nodes.push_back(root);
+		f(root->right);
+	};
+	f(root);
+	nodes.shrink_to_fit();
+
+	for (int i = 0; i < nodes.size(); i++)
+	{
+		if (nodes[i]->val > nodes[i + 1]->val)
+		{
+			int j = i + 1;
+			while (j < nodes.size() && nodes[j]->val <= nodes[j - 1]->val) j++; j--;
+			int t = nodes[i]->val;
+			nodes[i]->val = nodes[j]->val;
+			nodes[j]->val = t;
+			break;
+		}
+	}
+
+
 }

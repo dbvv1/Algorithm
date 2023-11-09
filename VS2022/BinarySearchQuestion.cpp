@@ -1,4 +1,6 @@
 #include<vector>
+#include<algorithm>
+#include<numeric>
 using namespace std;
 
 //题目一：搜索旋转排序数组 nums中每个值独一无二
@@ -148,4 +150,45 @@ double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
     }
 
     return (n + m) % 2 == 0 ? (median1 + median2) / 2.0 : median1;
+}
+
+
+//二分答案法
+
+//题目一：将数组分成k个子数组 要求每组的和的最大值最小
+int splitArray(vector<int>& nums, int k)
+{
+    int sum = accumulate(nums.begin(), nums.end(), 0);
+    int maxNum = *max_element(nums.begin(), nums.end());
+    int left = maxNum, right = sum;
+    int ans = right;
+    auto f = [&](int mid)
+    {
+        int count = 0;
+        int curSum = 0;
+        for (int i = 0; i < nums.size(); i++)
+        {
+            curSum += nums[i];
+            if (curSum > mid)
+            {
+                count++;
+                curSum = nums[i];
+            }
+        }
+        if (curSum != 0) count++;
+        return count;
+    };
+    while (left <= right)
+    {
+        int mid = left + (right - left) / 2;
+        //每组和的最大值为mid情况下看看能分成多少组
+        int x = f(mid);
+        if (x <= k)
+        {
+            ans = mid;
+            right = mid - 1;
+        }
+        else left = mid + 1;
+    }
+    return ans;
 }

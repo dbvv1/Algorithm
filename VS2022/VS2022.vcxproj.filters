@@ -60,7 +60,7 @@
     <ClCompile Include="Singleton.cpp">
       <Filter>源文件\Basics Algorithm</Filter>
     </ClCompile>
-    <ClCompile Include="AddWithoutAddSign.cpp">
+    <ClCompile Include="CaluateWithBitOperation.cpp">
       <Filter>源文件\LeetCode And Other</Filter>
     </ClCompile>
     <ClCompile Include="ClassSchedule.cpp">
@@ -125,6 +125,21 @@
     </ClCompile>
     <ClCompile Include="MaximumRectangle.cpp">
       <Filter>源文件\LeetCode And Other</Filter>
+    </ClCompile>
+    <ClCompile Include="Recursion.cpp">
+      <Filter>源文件\LeetCode And Other</Filter>
+    </ClCompile>
+    <ClCompile Include="StringHash.cpp">
+      <Filter>源文件\LeetCode And Other</Filter>
+    </ClCompile>
+    <ClCompile Include="UsePriorityQueue.cpp">
+      <Filter>源文件\LeetCode And Other</Filter>
+    </ClCompile>
+    <ClCompile Include="MapAlgorithm.cpp">
+      <Filter>源文件\LeetCode And Other</Filter>
+    </ClCompile>
+    <ClCompile Include="TreeArray.cpp">
+      <Filter>源文件\Basics Algorithm</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
