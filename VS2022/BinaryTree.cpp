@@ -434,3 +434,45 @@ void flatten(TreeNode* root) {
 	//flattenF1(root);
 	flattenF2(root);
 }
+
+
+//二叉树的Morris实现反向中序遍历 实现O（1）复杂度
+
+//得到后继节点：右子树的最左节点
+TreeNode* getSuccessor(TreeNode* node) 
+{
+	TreeNode* succ = node->right;
+	while (succ->left != nullptr && succ->left != node) {
+		succ = succ->left;
+	}
+	return succ;
+}
+
+TreeNode* bstToGst(TreeNode* root)
+{
+	TreeNode* node = root;
+
+	while (node != nullptr)
+	{
+		if (node->right == nullptr)
+		{
+			node = node->left;
+		}
+		else 
+		{
+			TreeNode* succ = getSuccessor(node);
+			if (succ->left == nullptr)
+			{
+				succ->left = node;
+				node = node->right;
+			}
+			else 
+			{
+				succ->left = nullptr;
+				node = node->left;
+			}
+		}
+	}
+
+	return root;
+}

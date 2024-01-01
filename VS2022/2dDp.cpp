@@ -8,7 +8,7 @@ int n;
 int m;
 
 
-// 最长公共子序列 TODO:加上回溯 构造这个子序列
+// 最长公共子序列
 int longestCommonSubsequence1(string s1, string s2)
 {
 	int len1 = s1.size();
@@ -51,6 +51,37 @@ int longestCommonSubsequence2(string s1, string s2)
 	}
 	return dp[len2];
 
+}
+
+string ans;
+
+// 从结尾开始创建最长公共子序列 优先匹配左上角能让我们进行添加字符的操作
+void getlongestCommonSubsequenceFromEnd(int x, int y, string&str1,vector<vector<int>>& dp)
+{
+	if (x <= 0 || y <= 0) return;
+	// 多种情况
+	if (dp[x][y] == dp[x - 1][y - 1] + 1)
+	{
+		// 进行追加操作
+		ans += str1[x - 1];
+		getlongestCommonSubsequenceFromEnd(x - 1, y - 1, str1, dp);
+	}
+	else if (dp[x][y] == dp[x - 1][y]) getlongestCommonSubsequenceFromEnd(x - 1, y,str1, dp);
+	else getlongestCommonSubsequenceFromEnd(x, y - 1,str1, dp);
+}
+
+// 从开头开始创建最长公共子序列 优先匹配右边和下边让我们值相等的操作
+void getlongestCommonSubsequenceFromStart(int x, int y, string& str1, string& str2, vector<vector<int>>& dp)
+{
+	if (x >= str1.size() || y >= str2.size()) return;
+	// 多种情况
+	if (dp[x][y] == dp[x + 1][y]) getlongestCommonSubsequenceFromStart(x + 1, y, str1, str2, dp);
+	else if (dp[x][y] == dp[x][y + 1]) getlongestCommonSubsequenceFromStart(x, y + 1, str1, str2, dp);
+	else 
+	{
+		ans += str1[x];
+		getlongestCommonSubsequenceFromStart(x + 1, y + 1, str1, str2, dp);
+	}
 }
 
 //编辑距离问题 题意：将s1转化成s2 可以进行添加，删除，替换三种操作
@@ -145,36 +176,36 @@ int ways(vector<string>& pizza, int k)
 }
 
 //交错字符串
-bool isInterleave(string s1, string s2, string s3)
-{
-	//dp[i][j]表示s1前i个字符和s2前j个字符 能否组合成s3前i+j个字符
-	int len1 = s1.size();
-	int len2 = s2.size();
-	if (len1 + len2 != s3.size()) return false;
-	bool dp[len1 + 1][len2 + 1]; dp[len1][len2] = false;
-	dp[0][0] = true;
-	for (int j = 1; j <= len2; j++)
-	{
-		if (s2[j - 1] != s3[j - 1]) break;
-		dp[0][j] = true;
-	}
-	for (int i = 1; i < len1; i++)
-	{
-		if (s1[i - 1] != s3[i - 1]) break;
-		dp[i][0] = true;
-	}
-
-	for (int i = 1; i <= len1; i++)
-	{
-		for (int j = 1; j <= len2; j++)
-		{
-			//根据最后一个字符由谁搞定
-			bool p1 = (dp[i - 1][j]) && (s1[i - 1] == s3[i + j - 1]);
-			bool p2 = (dp[i][j - 1]) && (s2[j - 1] == s3[i + j - 1]);
-			dp[i][j] = p1 | p2;
-		}
-	}
-
-	return dp[len1][len2];
-
-}
+//bool isInterleave(string s1, string s2, string s3)
+//{
+//	//dp[i][j]表示s1前i个字符和s2前j个字符 能否组合成s3前i+j个字符
+//	int len1 = s1.size();
+//	int len2 = s2.size();
+//	if (len1 + len2 != s3.size()) return false;
+//	bool dp[len1 + 1][len2 + 1]; dp[len1][len2] = false;
+//	dp[0][0] = true;
+//	for (int j = 1; j <= len2; j++)
+//	{
+//		if (s2[j - 1] != s3[j - 1]) break;
+//		dp[0][j] = true;
+//	}
+//	for (int i = 1; i < len1; i++)
+//	{
+//		if (s1[i - 1] != s3[i - 1]) break;
+//		dp[i][0] = true;
+//	}
+//
+//	for (int i = 1; i <= len1; i++)
+//	{
+//		for (int j = 1; j <= len2; j++)
+//		{
+//			//根据最后一个字符由谁搞定
+//			bool p1 = (dp[i - 1][j]) && (s1[i - 1] == s3[i + j - 1]);
+//			bool p2 = (dp[i][j - 1]) && (s2[j - 1] == s3[i + j - 1]);
+//			dp[i][j] = p1 | p2;
+//		}
+//	}
+//
+//	return dp[len1][len2];
+//
+//}

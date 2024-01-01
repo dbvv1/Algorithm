@@ -36,7 +36,7 @@
     <ClCompile Include="MyPriorityQueue.cpp">
       <Filter>源文件\Container Simulation</Filter>
     </ClCompile>
-    <ClCompile Include="SharedPoint.cpp">
+    <ClCompile Include="SmartPtr.cpp">
       <Filter>源文件\Container Simulation</Filter>
     </ClCompile>
     <ClCompile Include="SimpleVector.cpp">
@@ -140,6 +140,27 @@
     </ClCompile>
     <ClCompile Include="TreeArray.cpp">
       <Filter>源文件\Basics Algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="Test2.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SimpleList.cpp">
+      <Filter>源文件\Container Simulation</Filter>
+    </ClCompile>
+    <ClCompile Include="SimpleDeque.cpp">
+      <Filter>源文件\Container Simulation</Filter>
+    </ClCompile>
+    <ClCompile Include="MyStack.cpp">
+      <Filter>源文件\Container Simulation</Filter>
+    </ClCompile>
+    <ClCompile Include="MyQueue.cpp">
+      <Filter>源文件\Container Simulation</Filter>
+    </ClCompile>
+    <ClCompile Include="MoveAndForword.cpp">
+      <Filter>源文件\Basics Algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="TODO.cpp">
+      <Filter>源文件\LeetCode And Other</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -108,6 +108,8 @@
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
       <MultiProcessorCompilation>false</MultiProcessorCompilation>
+      <Optimization>Disabled</Optimization>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -153,7 +155,12 @@
     <ClCompile Include="MaximumRectangle.cpp" />
     <ClCompile Include="MaxPoints.cpp" />
     <ClCompile Include="MeetingRooms.cpp" />
+    <ClCompile Include="MoveAndForword.cpp" />
     <ClCompile Include="MoveWindow.cpp" />
+    <ClCompile Include="MyQueue.cpp" />
+    <ClCompile Include="MyStack.cpp" />
+    <ClCompile Include="SimpleDeque.cpp" />
+    <ClCompile Include="SimpleList.cpp" />
     <ClCompile Include="MyMemory.cpp" />
     <ClCompile Include="MyPriorityQueue.cpp" />
     <ClCompile Include="PatternMatch.cpp" />
@@ -161,11 +168,13 @@
     <ClCompile Include="Recursion.cpp" />
     <ClCompile Include="RobbingHouse.cpp" />
     <ClCompile Include="SelectPrime.cpp" />
-    <ClCompile Include="SharedPoint.cpp" />
+    <ClCompile Include="SmartPtr.cpp" />
     <ClCompile Include="SimpleVector.cpp" />
     <ClCompile Include="Singleton.cpp" />
     <ClCompile Include="SpecialNums.cpp" />
     <ClCompile Include="StringHash.cpp" />
+    <ClCompile Include="Test2.cpp" />
+    <ClCompile Include="TODO.cpp" />
     <ClCompile Include="TreeArray.cpp" />
     <ClCompile Include="TrieTree.cpp" />
     <ClCompile Include="UnionFind.cpp" />

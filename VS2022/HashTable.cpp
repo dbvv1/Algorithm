@@ -1,48 +1,71 @@
 #include <vector>
+#include <list>
 #include <algorithm>
 
 
-class HashTable {
+template<typename Key, typename Value>
+class HashMap {
 public:
-	HashTable(size_t size = 8) : elems(size, std::make_pair(-1, -1)), count(0) {}
+    HashMap(size_t size = 8) : data(size), numElements(0), loadFactorThreshold(0.75) {}
 
-	void put(int key, int value) {
-		// Check load factor
-		if (static_cast<double>(count) / elems.size() > 0.7)
-			resize(elems.size() * 2);
+    void put(const Key& key, const Value& value) 
+    {
+        if (1.0 * numElements / data.size() >= loadFactorThreshold) 
+        {
+            rehash();
+        }
+        size_t index = hashFunction(key);
+        auto& pairs = data[index];
+        auto pairIter = std::find_if(pairs.begin(), pairs.end(),
+            [&](const std::pair<Key, Value>& pair) { return pair.first == key; });
+        if (pairIter != pairs.end())
+        {
+            pairIter->second = value;
+        }
+        else 
+        {
+            pairs.push_back(std::make_pair(key, value));
+            ++numElements;
+        }
+    }
 
-		int index = key % elems.size();
-		while (elems[index].first != -1 && elems[index].first != key) {
-			index = (index + 1) % elems.size(); // Linear probing
-		}
-
-		if (elems[index].first == -1)
-			++count;
-
-		elems[index] = std::make_pair(key, value);
-	}
-
-	int get(int key) {
-		int index = key % elems.size();
-		while (elems[index].first != -1 && elems[index].first != key)
-			index = (index + 1) % elems.size();
-
-		return (elems[index].first == -1 ? -1 : elems[index].second);
-	}
+    Value get(const Key& key)
+    {
+        size_t index = hashFunction(key);
+        auto& pairs = data[index];
+        auto pairIter = std::find_if(pairs.begin(), pairs.end(),
+            [&](const std::pair<Key, Value>& pair) { return pair.first == key; });
+        if (pairIter != pairs.end()) 
+        {
+            return pairIter->second;
+        }
+        else 
+        {
+            throw std::_Xruntime_error("Key not found");
+        }
+    }
 
 private:
-	std::vector<std::pair<int, int>> elems;
-	size_t count;
+    std::vector<std::list<std::pair<Key, Value>>> data;
+    size_t numElements;
+    double loadFactorThreshold;
 
-	void resize(size_t newSize) {
-		std::vector<std::pair<int, int>> oldElems = std::move(elems);
-		count = 0;
-		elems.resize(newSize, std::make_pair(-1, -1));
+    size_t hashFunction(const Key& key) 
+    {
+        return key % data.size();
+    }
 
-		for (const auto& kv : oldElems) {
-			if (kv.first != -1) {
-				put(kv.first, kv.second);
-			}
-		}
-	}
+    void rehash() 
+    {
+        auto oldData = std::move(data);
+        data.resize(2 * data.size());
+        numElements = 0;
+        for (auto& pairs : oldData) 
+        {
+            for (auto& pair : pairs) 
+            {
+                put(pair.first, pair.second);
+            }
+        }
+    }
 };
