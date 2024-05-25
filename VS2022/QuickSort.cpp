@@ -1,9 +1,9 @@
 #include<vector>
 #include<ctime>
 using namespace std;
-//¿ìËÙÅÅĞò
+//å¿«é€Ÿæ’åº
 
-//»®·Ö¹ı³Ì
+//åˆ’åˆ†è¿‡ç¨‹
 int Partition1(vector<int>& arr, int l, int r)
 {
 	int x = arr[l];
@@ -19,12 +19,12 @@ int Partition1(vector<int>& arr, int l, int r)
 	return j;
 }
 
-//²ÉÓÃºÉÀ¼¹úÆìµÄË¼Â·Çó½â
+//é‡‡ç”¨è·å…°å›½æ——çš„æ€è·¯æ±‚è§£
 pair<int, int> Partition2(vector<int>& arr, int l, int r)
 {
-	int less = l - 1; //Ğ¡ÓÚÇøÓò
-	int more = r + 1; //´óÓÚÇøÓò
-	int pivot = arr[l]; //¶¨Òå»ù×¼Öµ
+	int less = l - 1; //å°äºåŒºåŸŸ
+	int more = r + 1; //å¤§äºåŒºåŸŸ
+	int pivot = arr[l]; //å®šä¹‰åŸºå‡†å€¼
 	int i = l + 1;
 	while (i < more)
 	{
@@ -37,22 +37,22 @@ pair<int, int> Partition2(vector<int>& arr, int l, int r)
 
 int partition3(int arr[], int l, int r)
 {
-	int pivot = arr[l];  // È¡µÚÒ»¸öÔªËØ×÷Îª»ù×¼Öµ£¨pivot£©
-	int i = l + 1;       // ³õÊ¼»¯i£¬Ö¸ÏòpivotºóµÄµÚÒ»¸öÔªËØ
+	int pivot = arr[l];  // å–ç¬¬ä¸€ä¸ªå…ƒç´ ä½œä¸ºåŸºå‡†å€¼ï¼ˆpivotï¼‰
+	int i = l + 1;       // åˆå§‹åŒ–iï¼ŒæŒ‡å‘pivotåçš„ç¬¬ä¸€ä¸ªå…ƒç´ 
 
 	for (int j = l + 1; j <= r; j++)
 	{
 		if (arr[j] < pivot)
-		{   // Èç¹ûµ±Ç°ÔªËØĞ¡ÓÚ»ù×¼Öµ
-			swap(arr[i], arr[j]);// ½«µ±Ç°ÔªËØÓëÇ°ÃæµÄ´óÓÚ»ù×¼ÖµµÄÔªËØ½»»»Î»ÖÃ£¬±£Ö¤Ğ¡ÓÚ»ù×¼ÖµµÄ¶¼ÔÚ×ó±ß
-			i++;                // Ôö¼ÓĞ¡ÓÚ»ù×¼ÖµÔªËØµÄË÷ÒıÎ»ÖÃ
+		{   // å¦‚æœå½“å‰å…ƒç´ å°äºåŸºå‡†å€¼
+			swap(arr[i], arr[j]);// å°†å½“å‰å…ƒç´ ä¸å‰é¢çš„å¤§äºåŸºå‡†å€¼çš„å…ƒç´ äº¤æ¢ä½ç½®ï¼Œä¿è¯å°äºåŸºå‡†å€¼çš„éƒ½åœ¨å·¦è¾¹
+			i++;                // å¢åŠ å°äºåŸºå‡†å€¼å…ƒç´ çš„ç´¢å¼•ä½ç½®
 		}
 	}
-	swap(arr[l], arr[i - 1]);   // °Ñ»ù×¼Öµ·Åµ½ÕıÈ·µÄÎ»ÖÃÉÏ£¬´ËÊ±£¬×ó²àËùÓĞÊı¶¼±ÈËüĞ¡£¬ÓÒ²àËùÓĞÊı¶¼±ÈËü´ó
+	swap(arr[l], arr[i - 1]);   // æŠŠåŸºå‡†å€¼æ”¾åˆ°æ­£ç¡®çš„ä½ç½®ä¸Šï¼Œæ­¤æ—¶ï¼Œå·¦ä¾§æ‰€æœ‰æ•°éƒ½æ¯”å®ƒå°ï¼Œå³ä¾§æ‰€æœ‰æ•°éƒ½æ¯”å®ƒå¤§
 	return (i - 1);
 }
 
-//µİ¹é¹ı³Ì
+//é€’å½’è¿‡ç¨‹
 void QuickSort(vector<int>& arr, int l, int r)
 {
 	if (l >= r) return;
@@ -71,9 +71,9 @@ void RandomQuickSort(vector<int>& arr, int l, int r)
 	QuickSort(arr, p.second, r);
 }
 
-//Çó×îĞ¡µÄk¸öÊı
-//·½·¨Ò»£º»ùÓÚ¶Ñ
-//·½·¨¶ş£º»ùÓÚ¿ìËÙÅÅĞò£ºÇó×îĞ¡µÄµÚk¸öÊı¼´¿É
+//æ±‚æœ€å°çš„kä¸ªæ•°
+//æ–¹æ³•ä¸€ï¼šåŸºäºå †
+//æ–¹æ³•äºŒï¼šåŸºäºå¿«é€Ÿæ’åºï¼šæ±‚æœ€å°çš„ç¬¬kä¸ªæ•°å³å¯
 class GetLeastNumbers {
 public:
 
@@ -105,7 +105,7 @@ public:
 		else return QuickSort(arr, p + 1, r, k - (p - l + 1));
 	}
 
-	//»ùÓÚ¿ìËÙÅÅĞòÀ´ÊµÏÖ
+	//åŸºäºå¿«é€Ÿæ’åºæ¥å®ç°
 	vector<int> getLeastNumbers(vector<int>& arr, int k)
 	{
 		int p = QuickSort(arr, 0, arr.size() - 1, k);
@@ -115,15 +115,15 @@ public:
 	}
 };
 
-//Çó×î´óµÄµÚk¸öÊı--Çó×îĞ¡µÄµÚn-k+1¸öÊı
+//æ±‚æœ€å¤§çš„ç¬¬kä¸ªæ•°--æ±‚æœ€å°çš„ç¬¬n-k+1ä¸ªæ•°
 class FindKthLargest {
 public:
 
 	pair<int,int> Partition1(vector<int>& arr, int l, int r)
 	{
-		int less = l - 1; //Ğ¡ÓÚÇøÓò
-		int more = r + 1; //´óÓÚÇøÓò
-		int pivot = arr[l]; //¶¨Òå»ù×¼Öµ
+		int less = l - 1; //å°äºåŒºåŸŸ
+		int more = r + 1; //å¤§äºåŒºåŸŸ
+		int pivot = arr[l]; //å®šä¹‰åŸºå‡†å€¼
 		int i = l + 1;
 		while (i < more)
 		{
@@ -134,7 +134,7 @@ public:
 		return { less + 1,more - 1 };
 	}
 
-	//Çó×îĞ¡µÄµÚk¸öÊı
+	//æ±‚æœ€å°çš„ç¬¬kä¸ªæ•°
 	int QuickSort(vector<int>& arr, int l, int r, int k)
 	{
 		if (l >= r) return l;
@@ -146,10 +146,10 @@ public:
 		else return QuickSort(arr, p.second + 1, r, k - (p.second - l + 1));
 	}
 
-	//»ùÓÚ¿ìËÙÅÅĞòÀ´ÊµÏÖ
+	//åŸºäºå¿«é€Ÿæ’åºæ¥å®ç°
 	int findKthLargest(vector<int>& nums, int k)
 	{
-		//1 2 3 4 5 ºóÃæÈ«1
+		//1 2 3 4 5 åé¢å…¨1
 		int p = QuickSort(nums, 0, nums.size() - 1, nums.size() - k + 1);
 		return nums[p];
 

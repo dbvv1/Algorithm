@@ -1,3 +1,6 @@
+
+
+// static 单例
 class Singleton {
 public:
 	// 获取单例对象的函数

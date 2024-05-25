@@ -1,5 +1,15 @@
-﻿  Test2.cpp
-D:\VS2022\VC\Tools\MSVC\14.34.31933\include\ciso646(15,47): warning C4996: '_Header_ciso646': warning STL4036: <ciso646> is removed in C++20. You can define _SILENCE_CXX20_CISO646_REMOVED_WARNING or _SILENCE_ALL_CXX20_DEPRECATION_WARNINGS to suppress this warning.
+﻿  2dDp.cpp
+C:\Users\dbv\Desktop\VS2022\VS2022\2dDp.cpp(6,21): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+C:\Users\dbv\Desktop\VS2022\VS2022\2dDp.cpp(14,22): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+C:\Users\dbv\Desktop\VS2022\VS2022\2dDp.cpp(15,22): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+C:\Users\dbv\Desktop\VS2022\VS2022\2dDp.cpp(34,22): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+C:\Users\dbv\Desktop\VS2022\VS2022\2dDp.cpp(35,22): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+C:\Users\dbv\Desktop\VS2022\VS2022\2dDp.cpp(91,22): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+C:\Users\dbv\Desktop\VS2022\VS2022\2dDp.cpp(92,22): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+C:\Users\dbv\Desktop\VS2022\VS2022\2dDp.cpp(164,18): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+C:\Users\dbv\Desktop\VS2022\VS2022\2dDp.cpp(165,21): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+  MyMemory.cpp
+  TrieTree.cpp
   a1dbv.cpp
 D:\VS2022\VC\Tools\MSVC\14.34.31933\include\ciso646(15,47): warning C4996: '_Header_ciso646': warning STL4036: <ciso646> is removed in C++20. You can define _SILENCE_CXX20_CISO646_REMOVED_WARNING or _SILENCE_ALL_CXX20_DEPRECATION_WARNINGS to suppress this warning.
   正在生成代码...

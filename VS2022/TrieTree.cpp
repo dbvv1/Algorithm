@@ -41,19 +41,17 @@ public:
     void deleteWord(string word)
     {
         if (!search(word)) return;
-        Trie* cur = this;
-        for (int i = 0; i < word.size(); i++)
+        Trie* cur = this; cur->pass--;
+        for (int i = 0; i < word.length(); i++)
         {
-            cur->pass--;
-            if (cur->pass == 0)
+            cur = cur->next[word[i] - 'a'];
+            if (--cur->pass == 0)
             {
                 deleteTrie(cur);
                 return;
             }
-            cur = cur->next[word[i] - 'a'];
         }
-        cur->pass--; cur->end--;
-        if (cur->pass == 0) delete cur;
+        cur->end--;
     }
 
     //查找串是否完整地在前缀树中

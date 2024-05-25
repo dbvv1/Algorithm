@@ -145,6 +145,7 @@
     <ClCompile Include="CircleQueue.cpp" />
     <ClCompile Include="ClassSchedule.cpp" />
     <ClCompile Include="HashTable.cpp" />
+    <ClCompile Include="IndexTree.cpp" />
     <ClCompile Include="JudgePoint24.cpp" />
     <ClCompile Include="KMP.cpp" />
     <ClCompile Include="LFU.cpp" />

@@ -162,6 +162,9 @@
     <ClCompile Include="TODO.cpp">
       <Filter>源文件\LeetCode And Other</Filter>
     </ClCompile>
+    <ClCompile Include="IndexTree.cpp">
+      <Filter>源文件\Container Simulation</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyHead.h">

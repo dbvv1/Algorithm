@@ -4,11 +4,11 @@
 #include <unordered_map>
 using namespace std;
 
-vector<vector<int>> ans;   //´ğ°¸Êı×é
-vector<int> track;		   //Â·¾¶Êı×é
+vector<vector<int>> ans;   //ç­”æ¡ˆæ•°ç»„
+vector<int> track;		   //è·¯å¾„æ•°ç»„
 
 
-//È«ÅÅÁĞ1£º·µ»ØËùÓĞµÄÈ«ÅÅÁĞ (Ö±½ÓÊ¹ÓÃÔ­Êı×é¼´¿É)
+//å…¨æ’åˆ—1ï¼šè¿”å›æ‰€æœ‰çš„å…¨æ’åˆ— (ç›´æ¥ä½¿ç”¨åŸæ•°ç»„å³å¯)
 void permuteF1(int k, vector<int>& nums)
 {
 	if (k == nums.size())
@@ -16,7 +16,7 @@ void permuteF1(int k, vector<int>& nums)
 		ans.push_back(nums);
 		return;
 	}
-	//Ñ¡ÔñµÚk¸öÊıÊÇÊ²Ã´£¨ºÍºóÃæµÄÊıÒÀ´Î½»»»¼´¿É£©
+	//é€‰æ‹©ç¬¬kä¸ªæ•°æ˜¯ä»€ä¹ˆï¼ˆå’Œåé¢çš„æ•°ä¾æ¬¡äº¤æ¢å³å¯ï¼‰
 	for (int i = k; i < nums.size(); i++)
 	{
 		swap(nums[k], nums[i]);
@@ -32,8 +32,8 @@ vector<vector<int>> permute(vector<int>& nums)
 	return ans;
 }
 
-//È«ÅÅÁĞ2£º·µ»Ø²»ÖØ¸´µÄÈ«ÅÅÁĞ£¨¹Ø¼ü£¬´¦ÀíÖØ¸´µÄÇé¿ö£©
-//·½·¨Ò»£ºÊ¹ÓÃ±ê¼ÇÊı×é   ·½·¨¶ş£º±éÀú²é¿´ÊÇ·ñÖØ¸´
+//å…¨æ’åˆ—2ï¼šè¿”å›ä¸é‡å¤çš„å…¨æ’åˆ—ï¼ˆå…³é”®ï¼Œå¤„ç†é‡å¤çš„æƒ…å†µï¼‰
+//æ–¹æ³•ä¸€ï¼šä½¿ç”¨æ ‡è®°æ•°ç»„   æ–¹æ³•äºŒï¼šéå†æŸ¥çœ‹æ˜¯å¦é‡å¤
 void permuteF2(int k, vector<int>& nums)
 {
 	if (k == nums.size())
@@ -41,7 +41,7 @@ void permuteF2(int k, vector<int>& nums)
 		ans.push_back(nums);
 		return;
 	}
-	//Ñ¡ÔñµÚk¸öÊıÊÇÊ²Ã´£¨ºÍºóÃæµÄÊıÒÀ´Î½»»»¼´¿É£©
+	//é€‰æ‹©ç¬¬kä¸ªæ•°æ˜¯ä»€ä¹ˆï¼ˆå’Œåé¢çš„æ•°ä¾æ¬¡äº¤æ¢å³å¯ï¼‰
 	bool vis[21] = { false };
 	for (int i = k; i < nums.size(); i++)
 	{
@@ -51,7 +51,7 @@ void permuteF2(int k, vector<int>& nums)
 	}
 }
 
-//ÁíÍâÒ»ÖÖ·½·¨£ºĞèÒª ¶ÔÊı×é½øĞĞÅÅĞò²Ù×÷
+//å¦å¤–ä¸€ç§æ–¹æ³•ï¼šéœ€è¦ å¯¹æ•°ç»„è¿›è¡Œæ’åºæ“ä½œ
 bool used[10];
 void permuteF22(int k, vector<int>& nums)
 {
@@ -62,7 +62,7 @@ void permuteF22(int k, vector<int>& nums)
 	}
 	for (int i = 0; i < nums.size(); i++)
 	{
-		//if (i > 0 && nums[i] == nums[i - 1] && used[i - 1] == true) continue; Ò²¶Ô 
+		//if (i > 0 && nums[i] == nums[i - 1] && used[i - 1] == true) continue; ä¹Ÿå¯¹ 
 		if (i > 0 && nums[i] == nums[i - 1] && used[i - 1] == false) continue;
 		if (used[i] == false)
 		{
@@ -86,7 +86,7 @@ vector<vector<int>> permuteUnique(vector<int>& nums)
 
 
 
-//×éºÏ£º1-n ÖĞ Ñ¡Ôñk¸öÊı      ·µ»ØËùÓĞ¿ÉÄÜµÄ×éºÏ
+//ç»„åˆï¼š1-n ä¸­ é€‰æ‹©kä¸ªæ•°      è¿”å›æ‰€æœ‰å¯èƒ½çš„ç»„åˆ
 
 void conbineF1(int i, int n,int k)
 {
@@ -96,7 +96,7 @@ void conbineF1(int i, int n,int k)
 		if (track.size() == k) ans.push_back(track);
 		return;
 	}
-	//Ã¿¸öÊıÑ¡»ò²»Ñ¡
+	//æ¯ä¸ªæ•°é€‰æˆ–ä¸é€‰
 	track.push_back(i);
 	conbineF1(i + 1, n, k);
 	track.pop_back();
@@ -127,7 +127,7 @@ vector<vector<int>> combine(int n, int k)
 }
 
 
-//×éºÏ×ÜºÍÒ»£º   ÍêÈ«±³°üÎÊÌâ
+//ç»„åˆæ€»å’Œä¸€ï¼š   å®Œå…¨èƒŒåŒ…é—®é¢˜
 void combinationSumF(int x, int target, vector<int>& candidates)
 {
 	if (target < 0) return;
@@ -143,7 +143,7 @@ void combinationSumF(int x, int target, vector<int>& candidates)
 		track.push_back(candidates[x]);
 		count++;
 	}
-	//for (int k = 1; k<=(target)/candidates[x] + 1; k++) track.pop_back(); Ò²¶Ô
+	//for (int k = 1; k<=(target)/candidates[x] + 1; k++) track.pop_back(); ä¹Ÿå¯¹
 	while (count--)track.pop_back();
 }
 
@@ -153,7 +153,7 @@ vector<vector<int>> combinationSum(vector<int>& candidates, int target)
 	return ans;
 }
 
-//×éºÏ×ÜºÍ2£º   01±³°üÎÊÌâ£¬Ã¿¸öÊıÖ»ÄÜÑ¡Ò»¸ö£¬²»ÄÜ°üº¬ÖØ¸´µÄ½â
+//ç»„åˆæ€»å’Œ2ï¼š   01èƒŒåŒ…é—®é¢˜ï¼Œæ¯ä¸ªæ•°åªèƒ½é€‰ä¸€ä¸ªï¼Œä¸èƒ½åŒ…å«é‡å¤çš„è§£
 bool used2[101];
 void combinationSum2F1(int x, int target, vector<int>& candidates)
 {
@@ -168,7 +168,7 @@ void combinationSum2F1(int x, int target, vector<int>& candidates)
 		combinationSum2F1(x + 1, target, candidates);
 		return;
 	}
-	//Ã¿¸öÊıÑ¡»ò²»Ñ¡
+	//æ¯ä¸ªæ•°é€‰æˆ–ä¸é€‰
 	used2[x] = true;
 	track.push_back(candidates[x]);
 	combinationSum2F1(x + 1, target - candidates[x], candidates);
@@ -202,7 +202,7 @@ vector<vector<int>> combinationSum2(vector<int>& candidates, int target)
 
 }
 
-//µç»°ºÅÂëµÄ×éºÏ:
+//ç”µè¯å·ç çš„ç»„åˆ:
 void letterCombinationsF(vector<string>& combinations, const unordered_map<char, string>& phoneMap, const string& digits, int index, string& combination) {
 	if (index == digits.length()) {
 		combinations.push_back(combination);
@@ -238,7 +238,7 @@ vector<string> letterCombinations(string digits) {
 }
 
 
-//·Ö¸î»ØÎÄ´®
+//åˆ†å‰²å›æ–‡ä¸²
 vector<vector<string>> ans2;
 vector<string> track2;
 bool ishuiwen(string& s)
@@ -284,12 +284,12 @@ vector<vector<string>> partition(string s)
 	return ans2;
 }
 
-//N»ÊºóÎÊÌâ
-int x[10]; //µÚiĞĞµÄ»Êºó·ÅÖÃÔÚÁË x[i]µÄÎ»ÖÃÉÏ
-//½«»Êºó·ÅÖÃÔÚkĞĞµÄx[k]ÉÏÊÇ·ñ¿ÉĞĞ£¨ÊÇ·ñ²»ºÍÇ°ÃæµÄÎ»ÖÃ³åÍ»£©
+//Nçš‡åé—®é¢˜
+int x[10]; //ç¬¬iè¡Œçš„çš‡åæ”¾ç½®åœ¨äº† x[i]çš„ä½ç½®ä¸Š
+//å°†çš‡åæ”¾ç½®åœ¨kè¡Œçš„x[k]ä¸Šæ˜¯å¦å¯è¡Œï¼ˆæ˜¯å¦ä¸å’Œå‰é¢çš„ä½ç½®å†²çªï¼‰
 bool isok(int k)
 {
-	//ÅĞ¶ÏÍ¬ÁĞºÍÍ¬Ğ±Ïß
+	//åˆ¤æ–­åŒåˆ—å’ŒåŒæ–œçº¿
 	for (int i = 0; i < k; i++)
 	{
 		if (x[i] == x[k] || (abs(k - i) == abs(x[k] - x[i]))) return false;
@@ -308,7 +308,7 @@ void solveNQueensF(int k,int n)
 		ans2.emplace_back(t);
 		return;
 	}
-	//Ñ¡Ôñ»ÊºóµÄÎ»ÖÃ
+	//é€‰æ‹©çš‡åçš„ä½ç½®
 	for (int i = 0; i < n; i++)
 	{
 		x[k] = i;
