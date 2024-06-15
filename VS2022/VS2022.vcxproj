@@ -160,6 +160,7 @@
     <ClCompile Include="MoveWindow.cpp" />
     <ClCompile Include="MyQueue.cpp" />
     <ClCompile Include="MyStack.cpp" />
+    <ClCompile Include="QuadTree.cpp" />
     <ClCompile Include="SimpleDeque.cpp" />
     <ClCompile Include="SimpleList.cpp" />
     <ClCompile Include="MyMemory.cpp" />

@@ -1,6 +1,8 @@
+// 饿汉单例
 
+// 懒汉单例
 
-// static 单例
+// C++11 之后 static 单例
 class Singleton {
 public:
 	// 获取单例对象的函数

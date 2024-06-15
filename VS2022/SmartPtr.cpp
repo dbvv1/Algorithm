@@ -60,7 +60,7 @@ public:
 
     explicit shared_ptr(T* ptr = nullptr) : m_ptr(ptr), m_ctrl(ptr ? new ControlBlock{ 1, 0 } : nullptr) {}
 
-    explicit shared_ptr(T* ptr, ControlBlock& controlBlock) :m_ptr(ptr), m_ctrl(controlBlock) {}
+    explicit shared_ptr(T* ptr, ControlBlock* controlBlock) :m_ptr(ptr), m_ctrl(controlBlock) {}
 
     shared_ptr(const weak_ptr<T>& weakptr) :m_ptr(weakptr.m_ptr), m_ctrl(weakptr.m_ctrl)
     {
