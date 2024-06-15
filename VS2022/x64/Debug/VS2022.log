@@ -1,16 +1,135 @@
-﻿  2dDp.cpp
-C:\Users\dbv\Desktop\VS2022\VS2022\2dDp.cpp(6,21): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
-C:\Users\dbv\Desktop\VS2022\VS2022\2dDp.cpp(14,22): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
-C:\Users\dbv\Desktop\VS2022\VS2022\2dDp.cpp(15,22): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
-C:\Users\dbv\Desktop\VS2022\VS2022\2dDp.cpp(34,22): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
-C:\Users\dbv\Desktop\VS2022\VS2022\2dDp.cpp(35,22): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
-C:\Users\dbv\Desktop\VS2022\VS2022\2dDp.cpp(91,22): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
-C:\Users\dbv\Desktop\VS2022\VS2022\2dDp.cpp(92,22): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
-C:\Users\dbv\Desktop\VS2022\VS2022\2dDp.cpp(164,18): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
-C:\Users\dbv\Desktop\VS2022\VS2022\2dDp.cpp(165,21): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
-  MyMemory.cpp
-  TrieTree.cpp
+﻿  1dDp.cpp
+D:\C++ Project\VS2022\VS2022\1dDp.cpp(7,24): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\C++ Project\VS2022\VS2022\1dDp.cpp(36,24): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+  2dDp.cpp
+D:\C++ Project\VS2022\VS2022\2dDp.cpp(6,21): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+D:\C++ Project\VS2022\VS2022\2dDp.cpp(14,22): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\C++ Project\VS2022\VS2022\2dDp.cpp(15,22): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\C++ Project\VS2022\VS2022\2dDp.cpp(34,22): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\C++ Project\VS2022\VS2022\2dDp.cpp(35,22): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\C++ Project\VS2022\VS2022\2dDp.cpp(91,22): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\C++ Project\VS2022\VS2022\2dDp.cpp(92,22): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\C++ Project\VS2022\VS2022\2dDp.cpp(164,18): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+D:\C++ Project\VS2022\VS2022\2dDp.cpp(165,21): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+  CaluateWithBitOperation.cpp
+D:\C++ Project\VS2022\VS2022\CaluateWithBitOperation.cpp(30,27): warning C4146: 一元负运算符应用于无符号类型，结果仍为无符号类型
   a1dbv.cpp
 D:\VS2022\VC\Tools\MSVC\14.34.31933\include\ciso646(15,47): warning C4996: '_Header_ciso646': warning STL4036: <ciso646> is removed in C++20. You can define _SILENCE_CXX20_CISO646_REMOVED_WARNING or _SILENCE_ALL_CXX20_DEPRECATION_WARNINGS to suppress this warning.
+  BackTrack.cpp
+D:\C++ Project\VS2022\VS2022\BackTrack.cpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\C++ Project\VS2022\VS2022\BackTrack.cpp(246,29): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+  Bag.cpp
+D:\C++ Project\VS2022\VS2022\Bag.cpp(10,24): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\C++ Project\VS2022\VS2022\Bag.cpp(33,25): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+  BinarySearchQuestion.cpp
+D:\C++ Project\VS2022\VS2022\BinarySearchQuestion.cpp(10,35): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\C++ Project\VS2022\VS2022\BinarySearchQuestion.cpp(36,35): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\C++ Project\VS2022\VS2022\BinarySearchQuestion.cpp(72,25): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\C++ Project\VS2022\VS2022\BinarySearchQuestion.cpp(73,25): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\C++ Project\VS2022\VS2022\BinarySearchQuestion.cpp(100,50): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\C++ Project\VS2022\VS2022\BinarySearchQuestion.cpp(118,25): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\C++ Project\VS2022\VS2022\BinarySearchQuestion.cpp(119,25): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+  BinaryTree.cpp
+D:\C++ Project\VS2022\VS2022\BinaryTree.cpp(182,51): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+D:\C++ Project\VS2022\VS2022\BinaryTree.cpp(257,99): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+D:\C++ Project\VS2022\VS2022\BinaryTree.cpp(278,101): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+  Calculator.cpp
+  CircleQueue.cpp
+  ClassSchedule.cpp
+D:\C++ Project\VS2022\VS2022\ClassSchedule.cpp(97,2): warning C4267: “return”: 从“size_t”转换到“int”，可能丢失数据
+  HashTable.cpp
+  IndexTree.cpp
+  JudgePoint24.cpp
+  KMP.cpp
+D:\C++ Project\VS2022\VS2022\KMP.cpp(1,1): warning C4828: 文件包含在偏移 0x78 处开始的字符，该字符在当前源字符集中无效(代码页 936)。
+  LFU.cpp
+  List.cpp
+  LRU.cpp
+D:\C++ Project\VS2022\VS2022\LRU.cpp(1,9): warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+  Manacher.cpp
+D:\C++ Project\VS2022\VS2022\Manacher.cpp(13,21): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\C++ Project\VS2022\VS2022\Manacher.cpp(46,23): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+  MapAlgorithm.cpp
   正在生成代码...
-  VS2022.vcxproj -> C:\Users\dbv\Desktop\VS2022\x64\Debug\VS2022.exe
+  正在编译...
+  MaximumRectangle.cpp
+D:\C++ Project\VS2022\VS2022\MaximumRectangle.cpp(13,23): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\C++ Project\VS2022\VS2022\MaximumRectangle.cpp(14,26): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\C++ Project\VS2022\VS2022\MaximumRectangle.cpp(45,23): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\C++ Project\VS2022\VS2022\MaximumRectangle.cpp(46,26): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\C++ Project\VS2022\VS2022\MaximumRectangle.cpp(78,23): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\C++ Project\VS2022\VS2022\MaximumRectangle.cpp(79,26): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\C++ Project\VS2022\VS2022\MaximumRectangle.cpp(97,24): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\C++ Project\VS2022\VS2022\MaximumRectangle.cpp(128,24): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+  MaxPoints.cpp
+D:\C++ Project\VS2022\VS2022\MaxPoints.cpp(12,1): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+  MeetingRooms.cpp
+  MoveAndForword.cpp
+  MoveWindow.cpp
+D:\C++ Project\VS2022\VS2022\MoveWindow.cpp(58,24): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\C++ Project\VS2022\VS2022\MoveWindow.cpp(98,25): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\C++ Project\VS2022\VS2022\MoveWindow.cpp(98,46): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\C++ Project\VS2022\VS2022\MoveWindow.cpp(98,61): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+  MyQueue.cpp
+  MyStack.cpp
+  QuadTree.cpp
+D:\C++ Project\VS2022\VS2022\QuadTree.cpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  SimpleDeque.cpp
+  SimpleList.cpp
+  MyMemory.cpp
+  MyPriorityQueue.cpp
+D:\C++ Project\VS2022\VS2022\MyPriorityQueue.cpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  PatternMatch.cpp
+D:\C++ Project\VS2022\VS2022\PatternMatch.cpp(10,21): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\C++ Project\VS2022\VS2022\PatternMatch.cpp(41,21): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\C++ Project\VS2022\VS2022\PatternMatch.cpp(103,54): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+D:\C++ Project\VS2022\VS2022\PatternMatch.cpp(155,44): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+  QuickSort.cpp
+D:\C++ Project\VS2022\VS2022\QuickSort.cpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\C++ Project\VS2022\VS2022\QuickSort.cpp(67,12): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+D:\C++ Project\VS2022\VS2022\QuickSort.cpp(100,13): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+D:\C++ Project\VS2022\VS2022\QuickSort.cpp(111,1): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+D:\C++ Project\VS2022\VS2022\QuickSort.cpp(141,13): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+D:\C++ Project\VS2022\VS2022\QuickSort.cpp(153,1): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+  Recursion.cpp
+D:\C++ Project\VS2022\VS2022\Recursion.cpp(42,12): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+D:\VS2022\VC\Tools\MSVC\14.34.31933\include\utility(172,48): warning C4267: “初始化”: 从“size_t”转换到“_Ty2”，可能丢失数据
+          with
+          [
+              _Ty2=int
+          ]
+D:\C++ Project\VS2022\VS2022\Recursion.cpp(118,5): message : 查看对正在编译的函数 模板 实例化“std::pair<std::string,int>::pair<const char(&)[1],unsigned __int64,0>(_Other1,_Other2 &&) noexcept(false)”的引用
+          with
+          [
+              _Other1=const char (&)[1],
+              _Other2=unsigned __int64
+          ]
+D:\C++ Project\VS2022\VS2022\Recursion.cpp(93,28): message : 查看对正在编译的函数 模板 实例化“std::pair<std::string,int>::pair<const char(&)[1],unsigned __int64,0>(_Other1,_Other2 &&) noexcept(false)”的引用
+          with
+          [
+              _Other1=const char (&)[1],
+              _Other2=unsigned __int64
+          ]
+  RobbingHouse.cpp
+D:\C++ Project\VS2022\VS2022\RobbingHouse.cpp(58,50): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+D:\C++ Project\VS2022\VS2022\RobbingHouse.cpp(59,40): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+  SelectPrime.cpp
+  SmartPtr.cpp
+  SimpleVector.cpp
+  Singleton.cpp
+  正在生成代码...
+  正在编译...
+  SpecialNums.cpp
+  StringHash.cpp
+D:\C++ Project\VS2022\VS2022\StringHash.cpp(1,1): warning C4828: 文件包含在偏移 0x333 处开始的字符，该字符在当前源字符集中无效(代码页 936)。
+D:\C++ Project\VS2022\VS2022\StringHash.cpp(14,20): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+  Test2.cpp
+D:\VS2022\VC\Tools\MSVC\14.34.31933\include\ciso646(15,47): warning C4996: '_Header_ciso646': warning STL4036: <ciso646> is removed in C++20. You can define _SILENCE_CXX20_CISO646_REMOVED_WARNING or _SILENCE_ALL_CXX20_DEPRECATION_WARNINGS to suppress this warning.
+  TODO.cpp
+  TreeArray.cpp
+  TrieTree.cpp
+  UnionFind.cpp
+  UsePriorityQueue.cpp
+  正在生成代码...
+QuadTree.obj : error LNK2005: main 已经在 a1dbv.obj 中定义
+D:\C++ Project\VS2022\x64\Debug\VS2022.exe : fatal error LNK1169: 找到一个或多个多重定义的符号
